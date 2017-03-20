@@ -1,0 +1,55 @@
+﻿<html>
+
+<head>
+  <title>Toy Store</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <body>
+    <section>
+      <h1>select your products</h1>
+      <select id="categories">
+    </select>
+      <select id="products">
+    </select> amount:
+      <input id="quantity" type="number" value="1" />
+      <input id="add" type="button" value="add to cart" />
+    </section>
+    <section>
+      <h1>Cart</h1>
+      <table id="cartTable">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- 1. Include SystemJS -->
+    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <!-- 2. Configure SystemJS -->
+    <script>
+    System.config({
+      
+      packages: {
+        scripts: {
+          defaultExtension: 'js',
+          map: {
+            jquery: '/scripts/jquery-2.0.2.min.js'
+          },
+        }
+      }
+    });
+    System.import('scripts/index')
+          .then(null, console.error.bind(console));
+  </script>
+
+
+  </body>
+
+</html>
